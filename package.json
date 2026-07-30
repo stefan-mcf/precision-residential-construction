@@ -6,4 +6,3 @@
     "validate": "node scripts/validate-site.mjs"
   }
 }
-

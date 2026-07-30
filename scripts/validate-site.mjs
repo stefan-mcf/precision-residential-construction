@@ -25,4 +25,3 @@ assert(images.length >= 10);
 assert(images.every((image) => /\balt="[^"]+"/i.test(image)), "Every image requires alt text");
 
 console.log(`Static site is valid: ${images.length} images and ${new Set(assetPaths).size} assets.`);
-

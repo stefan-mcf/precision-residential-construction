@@ -21,4 +21,3 @@ The quote form uses a hosted form endpoint. The submit state distinguishes an ac
 ## Publication boundary
 
 Only material already approved for the live website is present here. Operational messages, customer submissions, invoices and private client records remain outside the repository.
-
