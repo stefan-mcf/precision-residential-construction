@@ -5,8 +5,8 @@ A customer-facing website for a Geelong residential builder, covering services, 
 | | |
 | --- | --- |
 | Status | Live client website |
-| Role | Discovery, content structure, design, implementation and lead capture |
-| Stack | HTML, CSS, JavaScript, n8n |
+| Role | Discovery, content structure, design, implementation, production launch and lead capture |
+| Stack | HTML, CSS, JavaScript, n8n, Cloudflare Pages and Zoho Mail |
 | Live site | [prconstruction.au](https://prconstruction.au/) |
 | Project page | [smsystems.au/work/precision-residential-construction](https://smsystems.au/work/precision-residential-construction/) |
 
@@ -45,9 +45,30 @@ The enquiry form captures the details needed for a useful first response:
 - preferred contact method;
 - project description.
 
-Enquiries are recorded by the form service and delivered to the business owner. A labelled commissioning enquiry reached the owner and received a direct reply.
+The form submits to a production n8n webhook. The workflow records the enquiry
+and sends an internal notification through the configured business-email path.
+A labelled commissioning enquiry reached the business owner and received a
+direct reply.
 
 ![Structured quote enquiry](assets/website-quote-crm.png)
+
+## Production delivery and QA
+
+The live site was launched through Cloudflare Pages with the custom
+`prconstruction.au` domain, DNS, SSL and canonical apex routing configured for
+production. Zoho Mail DNS and email authentication support the business-email
+and owner-notification path. The responsive implementation was checked across
+desktop and mobile layouts, including navigation, project media, contact
+actions and form controls.
+
+The repository validator checks the document metadata, responsive viewport,
+quote-form contract, required n8n webhook, referenced assets and image alt
+text. The live commissioning test verifies the customer path beyond the static
+page: the n8n-backed submission was accepted, recorded, delivered to the owner
+and answered.
+
+This evidence does not claim an automated follow-up sequence, a multi-stage CRM
+pipeline, traffic, rankings, conversion improvement, revenue or ROI.
 
 ## Source snapshot
 
